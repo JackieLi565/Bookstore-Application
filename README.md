@@ -39,7 +39,7 @@ To use this application, you can clone the repository and open it in NetBeans ID
 
 ## Credits
 
-This project was created by:
+This project was created by: <br />
 [Jackie Li](https://github.com/JackieLi565)<br />
 [Adrian Yu](https://github.com/adrianyu91)<br />
 [Ishan Patel](https://github.com/Ishan-Patel23)<br />
