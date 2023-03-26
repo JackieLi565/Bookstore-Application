@@ -18,9 +18,9 @@ The following technologies have been used to develop this application:
 
 - Programming Language: Java
 - IDE: NetBeans IDE
+- Version Control: Git
 - JavaFX Library
 - Scene Builder
-- Version Control: Git
 
 ## Usage
 
@@ -40,7 +40,8 @@ To use this application, you can clone the repository and open it in NetBeans ID
 ## Credits
 
 This project was created by:
-[Jackie Li] (https://github.com/JackieLi565)
-[Adrian Yu] (https://github.com/adrianyu91)
-[Ishan Patel] (https://github.com/Ishan-Patel23)
-[Mahir Soufian] (https://github.com/Mah3ro)
+[Jackie Li](https://github.com/JackieLi565)<br />
+[Adrian Yu](https://github.com/adrianyu91)<br />
+[Ishan Patel](https://github.com/Ishan-Patel23)<br />
+[Mahir Soufian](https://github.com/Mah3ro)<br />
+
