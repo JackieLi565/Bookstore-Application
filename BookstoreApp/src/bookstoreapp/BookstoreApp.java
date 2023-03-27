@@ -21,11 +21,12 @@ public class BookstoreApp extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 
-        Parent root = FXMLLoader.load(getClass().getResource("OwnerCustomerScreen.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
-
+        stage.setTitle("Book Store");
+        //replace the img with a book ^0^
     }
 
     /**
