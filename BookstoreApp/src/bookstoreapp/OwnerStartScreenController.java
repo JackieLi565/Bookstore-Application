@@ -25,8 +25,13 @@ public class OwnerStartScreenController implements Initializable {
     private Stage stage;
     private Scene scene;
     
+    
+    
+    /*
+    * Really janky routing system for the Navbar, I didn't want to create smaller controller files
+    */
     @FXML
-    public void onLogout(javafx.event.ActionEvent event) {
+    public void onOwnerStartLogout(javafx.event.ActionEvent event) {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
             scene = new Scene(root);
@@ -40,13 +45,30 @@ public class OwnerStartScreenController implements Initializable {
     }
     
     @FXML 
-    public void handleBook(javafx.event.ActionEvent event) {
-    
+    public void handleOwnerStarttoBook(javafx.event.ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("OwnerBookScreen.fxml"));
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+        } catch (Exception e) {
+        
+        }
     }
     
     @FXML 
-    public void handleCustomer(javafx.event.ActionEvent event) {
-    
+    public void handleOwnerStarttoCustomer(javafx.event.ActionEvent event) {
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("OwnerCustomerScreen.fxml"));
+            scene = new Scene(root);
+            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+            stage.setScene(scene);
+            stage.show();
+            System.out.println("Hello");
+        } catch (Exception e) {
+        
+        }
     }
     /**
      * Initializes the controller class.
