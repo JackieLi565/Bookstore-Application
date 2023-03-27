@@ -39,24 +39,25 @@ public class LoginPageController implements Initializable {
 
     @FXML
     public void login(javafx.event.ActionEvent event) {
+        Parent root;
         String name = username.getText();
         String pass = password.getText();
-        boolean isLoggedIn = bookstore.login(name, pass);
-        if (isLoggedIn) {
-            try {
-                Parent root = FXMLLoader.load(getClass().getResource("OwnerStartScreen.fxml"));
-                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        try {
+            if (name.equals("Jimmy1") && pass.equals("1")) {
+                root = FXMLLoader.load(getClass().getResource("OwnerStartScreen.fxml"));
                 scene = new Scene(root);
-                stage.setScene(scene);
-                stage.show();
-            } catch (Exception e) {
-                System.out.println("Could not load customer screen");
+            } else if (bookstore.login(name, pass)) {
+                root = FXMLLoader.load(getClass().getResource("CustomerStartScreen.fxml"));
+                scene = new Scene(root);
+            } else {
+                System.out.println("is neither owner or memeber");
             }
-        } else if (true) {
-            //TODO: implement owner
-        } else {
-            System.out.println("is neither owner or memeber");
+        }catch(Exception e) {
+        
         }
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage.setScene(scene);
+        stage.show();
     }
     
     @Override
