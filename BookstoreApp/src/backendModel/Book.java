@@ -7,7 +7,7 @@ package backendModel;
 public class Book {
     private String name;
     private double price;
-    static public int id;
+    public static int id;
     private boolean isChecked = false;
     
     
