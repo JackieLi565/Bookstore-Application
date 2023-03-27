@@ -11,5 +11,13 @@ package backendModel;
  */
 public abstract class Account {
     
+    private String username;
+    private String password;
+    
+    public abstract String getUserName();
+    public abstract void setUserName(String u);
+    
+    public abstract String getPassword();
+    public abstract void setPassword(String p);
     
 }
