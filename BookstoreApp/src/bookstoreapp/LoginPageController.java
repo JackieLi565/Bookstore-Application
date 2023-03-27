@@ -44,7 +44,7 @@ public class LoginPageController implements Initializable {
         boolean isLoggedIn = bookstore.login(name, pass);
         if (isLoggedIn) {
             try {
-                Parent root = FXMLLoader.load(getClass().getResource("CustomerStartScreen.fxml"));
+                Parent root = FXMLLoader.load(getClass().getResource("OwnerStartScreen.fxml"));
                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                 scene = new Scene(root);
                 stage.setScene(scene);
