@@ -1,4 +1,3 @@
-package backendModel;
 
 /**
  *
@@ -8,7 +7,7 @@ public class Book {
     private String name;
     private double price;
     public static int id;
-    private boolean isChecked = false;
+    private boolean isChecked;
     
     
     //Book constructor
@@ -31,11 +30,12 @@ public class Book {
         this.price = price;
     }
     public void setCheck(){
-        isChecked = !isChecked;
+        this.isChecked = !isChecked;
     }
     public boolean getCheck(){
         return isChecked;
     }
-    
-    
 }
+    
+    
+
