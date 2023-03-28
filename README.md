@@ -26,7 +26,7 @@ The following technologies have been used to develop this application:
 
 To use this application, you can clone the repository and open it in NetBeans IDE. The following steps will guide you:
 
-1. Clone the repository using the following command: `git clone https://github.com/<username>/<repository-name>.git`
+1. Clone the repository using the following command: `git clone https://github.com/JackieLi565/Bookstore-Application.git`
 2. Open the project in NetBeans IDE.
 3. Have JavaFX library installed and added to the project
 4. Add ```--module-path "JavaFX lib file path" --add-modules javafx.controls,javafx.fxml``` to VM options
