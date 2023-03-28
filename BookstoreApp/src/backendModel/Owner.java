@@ -1,4 +1,3 @@
-
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -10,41 +9,27 @@ package backendModel;
  *
  * @author ishan
  */
-public class Customer extends Account {
+public class Owner extends Account{
     
-    private String username;
-    private String password;
-    private int points;
-    private State memberType;
+    private static String username;
+    private static String password;
+    private static Owner instance;
     
-    public Customer(String user, String pass)
-    {
-        this.username = user;
-        this.password = pass;
-        this.points = 0;
-        //this.memberType = silver;
+    private Owner(String username, String password) {
+        
+        this.username = username;
+        this.password = password;
+        
     }
     
-    public void changeState()
+    public static Owner getInstance()
     {
-        if(points >= 1000)
+        if(instance == null)
         {
-            //memberType = gold;
+            instance = new Owner(username, password);
         }
         
-        else {
-            //memberType = silver;
-        }
-    }
-    
-    public int getPoints()
-    {
-        return points;
-    }
-    
-    public void setPoints(int p)
-    {
-        points = p;
+        return instance;
     }
     
     @Override
@@ -64,10 +49,11 @@ public class Customer extends Account {
     {
         return password;
     }
-    
     @Override
     public void setPassword(String p)
     {
         password = p;
     }
+    
+    
 }

@@ -18,9 +18,9 @@ The following technologies have been used to develop this application:
 
 - Programming Language: Java
 - IDE: NetBeans IDE
+- Version Control: Git
 - JavaFX Library
 - Scene Builder
-- Version Control: Git
 
 ## Usage
 
@@ -28,7 +28,9 @@ To use this application, you can clone the repository and open it in NetBeans ID
 
 1. Clone the repository using the following command: `git clone https://github.com/<username>/<repository-name>.git`
 2. Open the project in NetBeans IDE.
-3. Build the project and run the application.
+3. Have JavaFX library installed and added to the project
+4. Add ```--module-path "JavaFX lib file path" --add-modules javafx.controls,javafx.fxml``` to VM options
+5. Build the project and run the application.
 
 ## UML Diagrams
 [useCaseDiagram.pdf](https://github.com/JackieLi565/COE528_Group_Project/files/11057571/useCaseDiagram.pdf)
@@ -37,4 +39,9 @@ To use this application, you can clone the repository and open it in NetBeans ID
 
 ## Credits
 
-This project was created by:
+This project was created by: <br />
+[Jackie Li](https://github.com/JackieLi565)<br />
+[Adrian Yu](https://github.com/adrianyu91)<br />
+[Ishan Patel](https://github.com/Ishan-Patel23)<br />
+[Mahir Soufian](https://github.com/Mah3ro)<br />
+
