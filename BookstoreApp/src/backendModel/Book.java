@@ -1,33 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package backendModel;
 
 /**
  *
- * @author lijac
+ * @author adria
  */
 public class Book {
-    private String book;
-    private int price;
-
-    public Book(String book, int price) {
-        this.book = book;
+    private String name;
+    private double price;
+    public static int id;
+    private boolean isChecked;
+    
+    
+    //Book constructor
+    public Book(String name, double price){
+        this.name = name;
+        this.price = price;
+        this.isChecked = false;
+    }
+    
+    public String getName(){
+        return name;
+    }
+    public void setName(String name){
+        this.name = name;
+    }
+    public double getPrice(){
+        return price;
+    }
+    public void setPrice(int price){
         this.price = price;
     }
-
-    public String getBook() {
-        return this.book;
+    public void setCheck(){
+        this.isChecked = !isChecked;
     }
-
-    public int getPrice() {
-        return this.price;
-    }
-
-    @Override
-    public String toString() {
-        return "" + this.book + ", " + this.price;
+    public boolean getCheck(){
+        return isChecked;
     }
 }
+    
+    
+
