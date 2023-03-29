@@ -8,23 +8,23 @@ import java.util.ArrayList;
  */
 public class Bookstore {
     private final Query database;
-    //private static Bookstore instance = new Bookstore();
+    private static Bookstore instance;
     private static final String CF = "Customers.txt";
     private static final String BF = "Books.txt";
     private Account currentUser;
-    public Bookstore() {
+    private Bookstore() {
         database = Query.getInstance(CF, BF);
         this.currentUser = null;
     }
     
-    /*
+    
         public Bookstore getInstance() {
         if(instance == null) {
             instance = new Bookstore();
         }
         return instance;
     }
-    */
+    
     
     private void setUser(Account user) {
         this.currentUser = user;

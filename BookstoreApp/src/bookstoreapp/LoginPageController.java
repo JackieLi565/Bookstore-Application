@@ -20,6 +20,7 @@ import javafx.stage.Stage;
 
 //Model imports
 import backendModel.Bookstore;
+import backendModel.Owner;
 
 /**
  * FXML Controller class
@@ -28,7 +29,8 @@ import backendModel.Bookstore;
  */
 public class LoginPageController implements Initializable {
     
-    Bookstore bookstore;
+    private Bookstore bookstore;
+    private Owner owner;
     private Stage stage;
     private Scene scene;
 
@@ -43,7 +45,7 @@ public class LoginPageController implements Initializable {
         String name = username.getText();
         String pass = password.getText();
         try {
-            if (name.equals("admin") && pass.equals("admin")) {
+            if (name.equals(owner.getUserName()) && pass.equals(owner.getPassword())) {
                 root = FXMLLoader.load(getClass().getResource("OwnerStartScreen.fxml"));
                 scene = new Scene(root);
                 System.out.println("Directing to Owner Start Screen");
@@ -64,7 +66,8 @@ public class LoginPageController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        bookstore = new Bookstore();
+        bookstore = bookstore.getInstance();
+        owner = owner.getInstance();
         //TODO: inst owner instance
     }    
 

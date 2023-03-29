@@ -12,7 +12,7 @@ public class Owner extends Account{
         super("admin", "admin");     
     }
     
-    public static Owner getInstance()
+    public Owner getInstance()
     {
         if(instance == null)
         {
