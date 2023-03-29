@@ -43,14 +43,16 @@ public class LoginPageController implements Initializable {
         String name = username.getText();
         String pass = password.getText();
         try {
-            if (name.equals("Jimmy1") && pass.equals("1")) {
+            if (name.equals("admin") && pass.equals("admin")) {
                 root = FXMLLoader.load(getClass().getResource("OwnerStartScreen.fxml"));
                 scene = new Scene(root);
+                System.out.println("Directing to Owner Start Screen");
             } else if (bookstore.login(name, pass)) {
                 root = FXMLLoader.load(getClass().getResource("CustomerStartScreen.fxml"));
                 scene = new Scene(root);
+                System.out.println("Directing to Customer Start Screen");
             } else {
-                System.out.println("is neither owner or memeber");
+                System.out.println("Could not find user in the database");
             }
         }catch(Exception e) {
         

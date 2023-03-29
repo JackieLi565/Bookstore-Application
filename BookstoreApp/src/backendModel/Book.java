@@ -1,4 +1,4 @@
-
+package backendModel;
 /**
  *
  * @author adria
@@ -18,13 +18,13 @@ public class Book {
     }
     
     public String getName(){
-        return name;
+        return this.name;
     }
     public void setName(String name){
         this.name = name;
     }
     public double getPrice(){
-        return price;
+        return this.price;
     }
     public void setPrice(int price){
         this.price = price;

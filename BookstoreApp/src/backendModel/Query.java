@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package backendModel;
 
 import java.io.BufferedReader;
@@ -16,11 +11,6 @@ import java.util.ArrayList;
  * @author lijac
  */
 public class Query {
-    /*
-     * TODO:
-     * Appened on close
-     * Use arraylist as temperary values
-    */
     private static Query instance;
     ArrayList<Account> customers = new ArrayList<>();
     ArrayList<Book> books = new ArrayList<>();
@@ -53,7 +43,7 @@ public class Query {
                 String customerName = data[0];
                 String customerPassword = data[1];
                 int customerPoints = Integer.parseInt(data[2]);
-                Customer customer = new Customer(customerName, customerPassword, customerPoints);
+                Account customer = new Customer(customerName, customerPassword, customerPoints);
                 customers.add(customer);
             }
             br.close();
@@ -111,11 +101,11 @@ public class Query {
         try {
             FileWriter bf = new FileWriter(bookFile, true);
             for (Book book : books) {
-                bf.write(book.getBook() + ", " + String.valueOf(book.getPrice()) + "\n");
+                bf.write(book.getName()+ ", " + String.valueOf(book.getPrice()) + "\n");
             }
             FileWriter cf = new FileWriter(customerFile, true); // append mode
             for (Account customer : customers) {
-                cf.write(customer.getName() + ", " + customer.getPassword() + ", " + String.valueOf(customer.getPoints())
+                cf.write(customer.getUserName()+ ", " + customer.getPassword() + ", " + String.valueOf(customer.getPoints())
                 + "\n");
             }
             bf.close();
@@ -162,10 +152,11 @@ public class Query {
 
     public static void main(String[] args) {
         //customer driver
+        /*
         Query database = getInstance("Customers.txt", "Books.txt");
     
         for (int i = 0; i < 10; i++) {
-            database.addCustomer(new Customer("Jimmy" + i, ""+i, i));
+            database.addCustomer(new Customer("Jimmy" + i, ""+i));
         }
 
         System.out.println(database.customers);
@@ -177,6 +168,6 @@ public class Query {
         System.out.println(database.books);
 
         database.saveToDataBase();
-
+        */
     }
 }

@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package backendModel;
 
 /**
@@ -27,7 +22,5 @@ public class goldMember implements State{
                return 0;
            }
            
-    }
-        //REMEMBER TO IMPLEMENTS THE CHANGE TO SILVER IF LESS THAN 1k
-    
+    }  
 }

@@ -37,7 +37,7 @@ public class OwnerBookScreenController implements Initializable {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-            System.out.println("Hello");
+            System.out.println("Owner Book Screen to Customer Screen");
         } catch (Exception e) {
         
         }
@@ -51,7 +51,7 @@ public class OwnerBookScreenController implements Initializable {
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
-            System.out.println("Hello");
+            System.out.println("Owner Book Logout");
         } catch (Exception e) {
         
         }

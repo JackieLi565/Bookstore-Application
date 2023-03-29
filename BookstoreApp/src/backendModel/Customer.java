@@ -1,9 +1,3 @@
-
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package backendModel;
 
 /**
@@ -11,63 +5,75 @@ package backendModel;
  * @author ishan
  */
 public class Customer extends Account {
-    
-    private String username;
-    private String password;
     private int points;
     private State memberType;
+    private boolean isChecked;
     
-    public Customer(String user, String pass)
+    public Customer(String user, String pass, int points)
     {
-        this.username = user;
-        this.password = pass;
-        this.points = 0;
-        //this.memberType = silver;
+        super(user, pass);
+        this.points = points;
+        this.isChecked = false;
+        changeState();
     }
     
-    public void changeState()
+    private void changeState()
     {
         if(points >= 1000)
         {
-            //memberType = gold;
+            this.memberType = new goldMember();
         }
         
         else {
-            //memberType = silver;
+            this.memberType = new silverMember();
         }
     }
     
-    public int getPoints()
-    {
-        return points;
+    public State getState() {
+        changeState();
+        return this.memberType;
     }
     
+    public void setCheck(){
+        this.isChecked = !this.isChecked;
+    }
+    public boolean getCheck(){
+        return this.isChecked;
+    }
+    
+    @Override
+    public int getPoints()
+    {
+        return this.points;
+    }
+    
+    @Override
     public void setPoints(int p)
     {
-        points = p;
+        this.points = p;
     }
     
     @Override
     public String getUserName()
     {
-        return username;
+        return this.username;
     }
     
     @Override
     public void setUserName(String u)
     {
-        username = u;
+        this.username = u;
     }
     
     @Override
     public String getPassword()
     {
-        return password;
+        return this.password;
     }
     
     @Override
     public void setPassword(String p)
     {
-        password = p;
+        this.password = p;
     }
 }

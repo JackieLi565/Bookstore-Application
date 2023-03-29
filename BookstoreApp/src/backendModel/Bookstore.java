@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package backendModel;
 
 import java.util.ArrayList;
@@ -35,21 +30,52 @@ public class Bookstore {
         this.currentUser = user;
     }
     
+    public Account getUser() {
+        return this.currentUser;
+    }
+    
+    public ArrayList<Account> loadUserData() {
+        return database.getCustomers();
+    }
+    
+    public ArrayList<Book> loadBookData() {
+        return database.getBooks();
+    }
+    
+    private void updateDatabase() {
+        database.saveToDataBase();
+    }
+    
+    public void addBook(Book book) {
+        database.addBook(book);
+    }
+    
+    public void addCustomer(Customer customer) {
+        database.addCustomer(customer);
+    }
+    
     public void logout() {
         this.currentUser = null;
+    }
+    
+    public Account searchCustomer(Customer customer) {
+        // add search later
+        return null;
+    }
+    
+    public Book searchCustomer(Book book) {
+        // add search later
+        return null;
     }
     
     public boolean login(String username, String password) {
         ArrayList<Account> list = database.getCustomers();
         for(Account customer: list) {
-            if(customer.getName().equals(username) && customer.getPassword().equals(password)){
-                System.out.println("is");
+            if(customer.getUserName().equals(username) && customer.getPassword().equals(password)){
                 setUser(customer);
                 return true;
             }
         }
-        System.out.println("isnt");
         return false;
     }
-    
 }
