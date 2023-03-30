@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="622.0" prefWidth="1025.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="bookstoreapp.CustomerCheckoutPageController">
+   <children>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#62b6cb" height="622.0" layoutX="418.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="607.0" />
+      <Text fill="WHITE" layoutX="447.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="The Reading Room" wrappingWidth="411.13671875">
+         <font>
+            <Font size="37.0" />
+         </font>
+      </Text>
+      <TableView layoutX="538.0" layoutY="77.0" prefHeight="268.0" prefWidth="367.0">
+        <columns>
+          <TableColumn prefWidth="225.0" text="C1" />
+          <TableColumn prefWidth="117.0" text="C2" />
+        </columns>
+      </TableView>
+      <Text fill="WHITE" layoutX="559.0" layoutY="377.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: $69.00" wrappingWidth="343.0">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <Text fill="#4a8cb5" layoutX="41.0" layoutY="87.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thank You!" wrappingWidth="293.13671875">
+         <font>
+            <Font name="Arial" size="47.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="559.0" layoutY="411.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount: $68.00" wrappingWidth="343.0">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="559.0" layoutY="444.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Due $69.00" wrappingWidth="343.0">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="559.0" layoutY="472.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Points Accumlated: 800" wrappingWidth="343.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Text fill="WHITE" layoutX="559.0" layoutY="502.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Status: Silver" wrappingWidth="343.0">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Text>
+      <Button layoutX="559.0" layoutY="529.0" mnemonicParsing="false" onAction="#onOwnerCustomerLogout" prefHeight="49.0" prefWidth="143.0" style="-fx-background-color: white;" text="Logout" textAlignment="CENTER" textFill="#62b6cb">
+         <font>
+            <Font name="System Bold" size="16.0" />
+         </font>
+      </Button>
+      <Text fill="#4a8cb5" layoutX="49.0" layoutY="131.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Hey Username," wrappingWidth="241.0">
+         <font>
+            <Font name="System Italic" size="25.0" />
+         </font>
+      </Text>
+      <Text fill="#356a86" layoutX="49.0" layoutY="171.0" lineSpacing="4.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Thank you for shopping at The Reading Room! We truly appreciate your business and hope that you found everything you were looking for. Our bookstore application was built using Java, a powerful programming language that allows us to create efficient and reliable software. Our development team has worked tirelessly to ensure that our application provides a seamless shopping experience for our customers, from browsing our vast selection of books to completing your purchase at checkout. We are committed to providing the best possible service and look forward to serving you again in the future. Thank you again for choosing The Reading Room, and happy reading!" wrappingWidth="293.13671875">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

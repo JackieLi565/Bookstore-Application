@@ -1,5 +1,7 @@
 package backendModel;
 
+import javafx.scene.control.CheckBox;
+
 /**
  *
  * @author ishan
@@ -7,13 +9,13 @@ package backendModel;
 public class Customer extends Account {
     private int points;
     private State memberType;
-    private boolean isChecked;
+    private CheckBox isChecked;
     
     public Customer(String user, String pass, int points)
     {
         super(user, pass);
         this.points = points;
-        this.isChecked = false;
+        this.isChecked = new CheckBox();
         changeState();
     }
     
@@ -34,10 +36,10 @@ public class Customer extends Account {
         return this.memberType;
     }
     
-    public void setCheck(){
-        this.isChecked = !this.isChecked;
+    public void setCheck(CheckBox check){
+        this.isChecked = check;
     }
-    public boolean getCheck(){
+    public CheckBox getCheck(){
         return this.isChecked;
     }
     

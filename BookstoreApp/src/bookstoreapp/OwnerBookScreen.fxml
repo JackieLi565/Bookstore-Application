@@ -58,39 +58,45 @@
             <Font size="37.0" />
          </font>
       </Text>
-      <TableView layoutX="373.0" layoutY="146.0" prefHeight="406.0" prefWidth="598.0">
+      <TableView fx:id="bookTable" layoutX="373.0" layoutY="146.0" prefHeight="406.0" prefWidth="598.0">
         <columns>
-          <TableColumn prefWidth="310.0" text="Book Name" />
-          <TableColumn minWidth="0.0" prefWidth="134.0" text="Book Price" />
-            <TableColumn minWidth="0.0" prefWidth="153.0" text="Selection" />
+          <TableColumn fx:id="bookNameCol" prefWidth="310.0" text="Book Name" />
+          <TableColumn fx:id="bookPriceCol" minWidth="0.0" prefWidth="134.0" text="Book Price" />
+            <TableColumn fx:id="check" minWidth="0.0" prefWidth="153.0" text="Selection" />
         </columns>
       </TableView>
       <AnchorPane layoutX="61.0" layoutY="159.0" prefHeight="209.0" prefWidth="274.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#62b6cb" height="209.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="276.0" />
-            <TextField layoutX="103.0" layoutY="55.0" prefHeight="25.0" prefWidth="133.0" promptText="title" />
+            <TextField fx:id="bookTitle" layoutX="103.0" layoutY="55.0" prefHeight="25.0" prefWidth="133.0" promptText="title" />
             <Text fill="WHITE" layoutX="95.0" layoutY="26.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Book">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="79.0" layoutY="148.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-color: white;" text="Add Book" textAlignment="CENTER" textFill="#62b6cb">
+            <Button layoutX="79.0" layoutY="148.0" mnemonicParsing="false" onAction="#addBook" prefHeight="33.0" prefWidth="111.0" style="-fx-background-color: white;" text="Add Book" textAlignment="CENTER" textFill="#62b6cb">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Text fill="WHITE" layoutX="24.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Title:" wrappingWidth="71.0" />
-            <TextField layoutX="103.0" layoutY="94.0" prefHeight="25.0" prefWidth="133.0" promptText="price" />
+            <TextField fx:id="bookPrice" layoutX="103.0" layoutY="94.0" prefHeight="25.0" prefWidth="133.0" promptText="price" />
             <Text fill="WHITE" layoutX="24.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Price:" wrappingWidth="71.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="61.0" layoutY="381.0" prefHeight="160.0" prefWidth="276.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#62b6cb" height="169.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="276.0" />
-            <Button layoutX="78.0" layoutY="100.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-color: white;" text="Remove" textAlignment="CENTER" textFill="#62b6cb">
+            <Button layoutX="78.0" layoutY="100.0" mnemonicParsing="false" onAction="#removeBook" prefHeight="33.0" prefWidth="111.0" style="-fx-background-color: white;" text="Remove" textAlignment="CENTER" textFill="#62b6cb">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Text fill="WHITE" layoutX="77.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove Book" textAlignment="CENTER">
                <font>

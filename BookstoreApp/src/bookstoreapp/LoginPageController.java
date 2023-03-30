@@ -28,9 +28,8 @@ import backendModel.Owner;
  * @author lijac
  */
 public class LoginPageController implements Initializable {
-    
-    private Bookstore bookstore;
-    private Owner owner;
+    Bookstore bookstore;
+    Owner owner;
     private Stage stage;
     private Scene scene;
 
@@ -66,9 +65,9 @@ public class LoginPageController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        bookstore = bookstore.getInstance();
-        owner = owner.getInstance();
         //TODO: inst owner instance
+        bookstore = new Bookstore(); //bookstore.getInstance();
+        owner = new Owner(); //owner.getInstance();
     }    
 
 

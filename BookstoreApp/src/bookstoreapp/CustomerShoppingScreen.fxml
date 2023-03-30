@@ -58,10 +58,13 @@
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="79.0" layoutY="104.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-color: white;" text="Search" textAlignment="CENTER" textFill="#62b6cb">
+            <Button fx:id="search" layoutX="79.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleSearchBooks" prefHeight="33.0" prefWidth="111.0" style="-fx-background-color: white;" text="Search" textAlignment="CENTER" textFill="#62b6cb">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Text fill="WHITE" layoutX="24.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Title:" wrappingWidth="71.0" />
          </children>
@@ -69,20 +72,26 @@
       <AnchorPane layoutX="71.0" layoutY="354.0" prefHeight="203.0" prefWidth="276.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#62b6cb" height="212.0" layoutY="-7.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="276.0" />
-            <Button layoutX="44.0" layoutY="148.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="179.0" style="-fx-background-color: white;" text="Redeem With Points" textAlignment="CENTER" textFill="#62b6cb">
+            <Button fx:id="redeem" layoutX="44.0" layoutY="148.0" mnemonicParsing="false" onAction="#handleCustomerShoppingtoCheckoutREDEEM" prefHeight="35.0" prefWidth="179.0" style="-fx-background-color: white;" text="Redeem With Points" textAlignment="CENTER" textFill="#62b6cb">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Text fill="WHITE" layoutX="91.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Checkout " textAlignment="CENTER">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Button layoutX="78.0" layoutY="99.0" mnemonicParsing="false" prefHeight="33.0" prefWidth="111.0" style="-fx-background-color: white;" text="Buy" textAlignment="CENTER" textFill="#62b6cb">
+            <Button fx:id="buy" layoutX="78.0" layoutY="99.0" mnemonicParsing="false" onAction="#handleCustomerShoppingtoCheckoutBUY" prefHeight="33.0" prefWidth="111.0" style="-fx-background-color: white;" text="Buy" textAlignment="CENTER" textFill="#62b6cb">
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Text layoutX="47.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Points: ">
                <font>

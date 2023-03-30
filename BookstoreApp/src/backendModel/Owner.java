@@ -8,7 +8,7 @@ public class Owner extends Account{
     
     private static Owner instance;
     
-    private Owner() {
+    public Owner() {
         super("admin", "admin");     
     }
     

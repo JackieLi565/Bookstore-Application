@@ -12,7 +12,7 @@ public class Bookstore {
     private static final String CF = "Customers.txt";
     private static final String BF = "Books.txt";
     private Account currentUser;
-    private Bookstore() {
+    public Bookstore() {
         database = Query.getInstance(CF, BF);
         this.currentUser = null;
     }
