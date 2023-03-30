@@ -62,7 +62,7 @@ public class Query {
             while ((line = br.readLine()) != null) {
                 String[] data = line.split(", ");
                 String bookName = data[0];
-                int bookPrice = Integer.parseInt(data[1]);
+                double bookPrice = Double.parseDouble(data[1]);
                 Book book = new Book(bookName, bookPrice);
                 books.add(book);
             }

@@ -55,6 +55,7 @@ public class Bookstore {
     }
     
     public void logout() {
+        updateDatabase();
         this.currentUser = null;
     }
     

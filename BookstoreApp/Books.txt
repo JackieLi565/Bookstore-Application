@@ -1,20 +1,6 @@
-Book0, 0
-Book1, 1
-Book2, 2
-Book3, 3
-Book4, 4
-Book5, 5
-Book6, 6
-Book7, 7
-Book8, 8
-Book9, 9
-Book0, 0
-Book1, 1
-Book2, 2
-Book3, 3
-Book4, 4
-Book5, 5
-Book6, 6
-Book7, 7
-Book8, 8
-Book9, 9
+Book5, 5.0
+Book6, 6.0
+Book7, 7.0
+Book8, 8.0
+Book9, 9.0
+Attack on Tiles, 12.0

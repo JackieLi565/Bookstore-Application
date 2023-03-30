@@ -56,26 +56,33 @@ public class OwnerBookScreenController implements Initializable {
     
     @FXML
     public void addBook(javafx.event.ActionEvent event) {
+        //creates the new book
         Book book = new Book(bookTitle.getText(), Double.parseDouble(bookPrice.getText()));
-        bookstore.loadBookData().add(book);
-        bookList.clear();
-        bookList.addAll(bookstore.loadBookData());
+        bookstore.loadBookData().add(book); //adds the book to the book store database
+        bookList.clear(); //clears the current list of books inside the table
+        bookList.addAll(bookstore.loadBookData()); //readds all the book data from the book store databse (incliding the new book) and adds it to the Observ list
 
-        bookTitle.clear();
-        bookPrice.clear();
-        bookTable.setItems(bookList);
+        bookTitle.clear(); //clear input box
+        bookPrice.clear(); //clear input box
+        
+        bookTable.setItems(bookList); // add the observ list to the table view
     }
     
     @FXML
     public void removeBook(javafx.event.ActionEvent event) {
-        ObservableList<Book> selectedBooks = FXCollections.observableArrayList();
+        ObservableList<Book> selectedBooks = FXCollections.observableArrayList(); //list for selecting the books
+        // for each book if the book isChecked add it to the lsit of checked books
         for (Book book : bookList) {
             if (book.getIsChecked()) {
                 selectedBooks.add(book);
             }
         }
-        bookList.removeAll(selectedBooks);
-        bookTable.setItems(bookList);
+        bookList.removeAll(selectedBooks); // removes all selected books
+        bookstore.loadBookData().clear(); // clear the db book data
+        bookstore.loadBookData().addAll(bookList);
+        bookList.clear(); //clears the list
+        bookList.addAll(bookstore.loadBookData()); // updates the book data
+        bookTable.setItems(bookList); //loads it to the table
     }
     
     /*
@@ -97,6 +104,7 @@ public class OwnerBookScreenController implements Initializable {
     
     @FXML 
     public void onOwnerBookLogout(javafx.event.ActionEvent event) {
+        bookstore.logout();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
             scene = new Scene(root);
