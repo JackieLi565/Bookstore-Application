@@ -20,6 +20,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 /**
@@ -33,6 +34,8 @@ public class CustomerShoppingScreenController implements Initializable {
     protected ObservableList<Book> bookList = FXCollections.observableArrayList();
     Bookstore bookstore = Bookstore.getInstance();
 
+    @FXML private Text points;
+    @FXML private Text status;
     //table
     @FXML
     private javafx.scene.control.TableView<Book> bookTable;
@@ -158,6 +161,8 @@ public class CustomerShoppingScreenController implements Initializable {
         });
         bookList.addAll(bookstore.loadBookData());
         bookTable.setItems(bookList);
+        points.setText(Integer.toString(bookstore.getUser().getPoints()));
+        status.setText(bookstore.getUser().getState().toString());
     }    
     
 }
