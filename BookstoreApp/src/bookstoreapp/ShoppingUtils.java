@@ -8,5 +8,5 @@ import javafx.collections.ObservableList;
 public class ShoppingUtils {
     protected ObservableList<Book> bookList = FXCollections.observableArrayList();
     protected ObservableList<Book> selectedList = FXCollections.observableArrayList();
-    protected Bookstore bookstore = new Bookstore();;
+    protected Bookstore bookstore = Bookstore.getInstance();
 }

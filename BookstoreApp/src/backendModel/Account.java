@@ -22,5 +22,6 @@ public abstract class Account {
     public abstract String getPassword();
     public abstract void setPassword(String p);
     
+    public abstract State getState();
 }
 

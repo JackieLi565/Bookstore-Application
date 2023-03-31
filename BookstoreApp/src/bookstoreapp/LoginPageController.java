@@ -56,7 +56,7 @@ public class LoginPageController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //TODO: inst owner instance
-        bookstore = new Bookstore(); //bookstore.getInstance();
+        bookstore = Bookstore.getInstance();
         owner = new Owner(); //owner.getInstance();
     }    
 

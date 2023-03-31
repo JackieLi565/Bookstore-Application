@@ -19,4 +19,9 @@ public class goldMember implements State{
            }
            
     }  
+    
+    @Override 
+    public String toString() {
+        return "Gold";
+    }
 }

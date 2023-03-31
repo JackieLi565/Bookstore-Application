@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 import backendModel.Bookstore;
 
 public class BookstoreApp extends Application {
-    Bookstore bookstore = new Bookstore();
+    static Bookstore bookstore;
     @Override
     public void start(Stage stage) throws Exception {
 
@@ -28,6 +28,7 @@ public class BookstoreApp extends Application {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        bookstore = Bookstore.getInstance();
         launch(args);
     }
     

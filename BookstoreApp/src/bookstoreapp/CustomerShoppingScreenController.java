@@ -155,9 +155,10 @@ public class CustomerShoppingScreenController extends ShoppingUtils implements I
                 }
             }
         });
-        bookList.addAll(bookstore.loadBookData());
-        bookTable.setItems(bookList);
-
+        //bookList.addAll(bookstore.loadBookData());
+        //bookTable.setItems(bookList);
+        //System.out.println(bookstore.getUser().toString());
+        System.out.println(bookstore.getUser().getState());
     }    
     
 }

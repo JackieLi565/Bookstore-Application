@@ -10,14 +10,14 @@ public class Bookstore {
     private Account currentUser;
     private ArrayList<Book> selectedBooks;
     
-    public Bookstore() {
+    private Bookstore() {
         database = Query.getInstance(CF, BF);
         selectedBooks = new ArrayList<>();
         this.currentUser = null;
     }
     
     
-        public Bookstore getInstance() {
+    public static Bookstore getInstance() {
         if(instance == null) {
             instance = new Bookstore();
         }

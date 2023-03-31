@@ -114,7 +114,7 @@ public class OwnerCustomerScreenController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        bookstore = new Bookstore();
+        bookstore = Bookstore.getInstance();
         customerNameCol.setCellValueFactory(new PropertyValueFactory<>("userName"));
         customerPassCol.setCellValueFactory(new PropertyValueFactory<>("password"));
         check.setCellValueFactory(new PropertyValueFactory<>("isChecked"));

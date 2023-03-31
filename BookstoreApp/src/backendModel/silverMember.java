@@ -19,4 +19,9 @@ public class silverMember implements State {
         }
 
     }
+    
+    @Override 
+    public String toString() {
+        return "Silver";
+    }
 }
