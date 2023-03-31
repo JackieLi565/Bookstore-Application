@@ -2,10 +2,6 @@ package backendModel;
 
 import javafx.scene.control.CheckBox;
 
-/**
- *
- * @author ishan
- */
 public class Customer extends Account {
     private int points;
     private State memberType;

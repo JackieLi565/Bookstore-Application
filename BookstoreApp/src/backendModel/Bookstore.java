@@ -2,10 +2,6 @@ package backendModel;
 
 import java.util.ArrayList;
 
-/**
- *
- * @author lijac
- */
 public class Bookstore {
     private final Query database;
     private static Bookstore instance;

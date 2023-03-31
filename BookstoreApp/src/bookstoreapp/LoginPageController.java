@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bookstoreapp;
 
  
@@ -22,11 +17,6 @@ import javafx.stage.Stage;
 import backendModel.Bookstore;
 import backendModel.Owner;
 
-/**
- * FXML Controller class
- *
- * @author lijac
- */
 public class LoginPageController implements Initializable {
     Bookstore bookstore;
     Owner owner;

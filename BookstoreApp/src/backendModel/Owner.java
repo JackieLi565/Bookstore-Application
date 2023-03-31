@@ -1,9 +1,5 @@
 package backendModel;
 
-/**
- *
- * @author ishan
- */
 public class Owner extends Account{
     
     private static Owner instance;

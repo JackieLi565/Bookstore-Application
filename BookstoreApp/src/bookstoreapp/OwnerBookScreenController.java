@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bookstoreapp;
 
 import java.net.URL;
@@ -23,11 +18,7 @@ import backendModel.Bookstore;
 import java.util.ArrayList;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableCell;
-/**
- * FXML Controller class
- *
- * @author lijac
- */
+
 public class OwnerBookScreenController implements Initializable {
     private ObservableList<Book> bookList = FXCollections.observableArrayList();
     private Bookstore bookstore;

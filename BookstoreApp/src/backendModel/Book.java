@@ -1,10 +1,5 @@
 package backendModel;
 
-
-/**
- *
- * @author adria
- */
 public class Book {
     private String name;
     private double price;

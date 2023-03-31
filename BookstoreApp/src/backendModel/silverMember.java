@@ -1,9 +1,5 @@
 package backendModel;
 
-/**
- *
- * @author mahir
- */
 public class silverMember implements State {
 
     @Override

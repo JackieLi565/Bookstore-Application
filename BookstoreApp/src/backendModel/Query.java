@@ -6,10 +6,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 
-/**
- *
- * @author lijac
- */
 public class Query {
     private static Query instance;
     ArrayList<Account> customers = new ArrayList<>();

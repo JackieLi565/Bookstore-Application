@@ -1,9 +1,5 @@
 package backendModel;
 
-/**
- *
- * @author ishan
- */
 public abstract class Account {
     
     protected String username;

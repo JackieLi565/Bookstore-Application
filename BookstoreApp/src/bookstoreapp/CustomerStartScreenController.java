@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package bookstoreapp;
 
 import java.net.URL;
@@ -15,11 +10,6 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author lijac
- */
 public class CustomerStartScreenController implements Initializable {
     private Stage stage;
     private Scene scene;
