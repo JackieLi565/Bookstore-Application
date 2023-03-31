@@ -27,10 +27,11 @@ import javafx.stage.Stage;
  *
  * @author lijac
  */
-public class CustomerShoppingScreenController extends ShoppingUtils implements Initializable {
+public class CustomerShoppingScreenController implements Initializable {
     private Stage stage;
     private Scene scene;
-    
+    protected ObservableList<Book> bookList = FXCollections.observableArrayList();
+    Bookstore bookstore = Bookstore.getInstance();
 
     //table
     @FXML
@@ -95,7 +96,7 @@ public class CustomerShoppingScreenController extends ShoppingUtils implements I
     public void handleCustomerShoppingtoCheckoutREDEEM(javafx.event.ActionEvent event) {
         for(Book book: bookList) {
             if(book.getIsChecked()) {
-                selectedList.add(book);
+                bookstore.addSelectedBook(book);
             }
         }
         try {
@@ -155,10 +156,8 @@ public class CustomerShoppingScreenController extends ShoppingUtils implements I
                 }
             }
         });
-        //bookList.addAll(bookstore.loadBookData());
-        //bookTable.setItems(bookList);
-        //System.out.println(bookstore.getUser().toString());
-        System.out.println(bookstore.getUser().getState());
+        bookList.addAll(bookstore.loadBookData());
+        bookTable.setItems(bookList);
     }    
     
 }
