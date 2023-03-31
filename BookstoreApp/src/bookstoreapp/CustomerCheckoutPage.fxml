@@ -22,7 +22,7 @@
           <TableColumn fx:id="bookPriceCol" prefWidth="141.0" text="Price" />
         </columns>
       </TableView>
-      <Text fill="WHITE" layoutX="559.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: $69.00" wrappingWidth="343.0">
+      <Text fx:id = "total" fill="WHITE" layoutX="559.0" layoutY="383.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total: $69.00" wrappingWidth="343.0">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
@@ -32,12 +32,12 @@
             <Font name="Arial" size="47.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="559.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount: $68.00" wrappingWidth="343.0">
+      <Text fx:id = "discount" fill="WHITE" layoutX="559.0" layoutY="417.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Discount: $0.00" wrappingWidth="343.0">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="559.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Due $69.00" wrappingWidth="343.0">
+      <Text fx:id = "amountDue" fill="WHITE" layoutX="559.0" layoutY="450.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Amount Due $69.00" wrappingWidth="343.0">
          <font>
             <Font name="System Bold" size="25.0" />
          </font>

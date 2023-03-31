@@ -16,11 +16,15 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class CustomerCheckoutPageController implements Initializable {
     protected Stage stage;
     protected Scene scene;
+    
+    protected double discount;
+    protected int pointsAccumulated;
     protected ObservableList<Book> bookList = FXCollections.observableArrayList();
     Bookstore bookstore = Bookstore.getInstance();
     //table
@@ -33,6 +37,9 @@ public class CustomerCheckoutPageController implements Initializable {
     
     @FXML
     private javafx.scene.control.TableColumn<Book, Double> bookPriceCol;
+    
+    @FXML
+    private Text total;
     
     @FXML
     public void onOwnerCustomerLogout(javafx.event.ActionEvent event) {
@@ -57,6 +64,20 @@ public class CustomerCheckoutPageController implements Initializable {
         bookPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
         bookList.addAll(bookstore.loadSelectedBooks());
         bookTable.setItems(bookList);
+        
+        double totalPrice = 0.0;
+        for (Book book : bookList) {
+            if (book.getIsChecked()) {
+                totalPrice += book.getPrice();
+            }
+        }
+        
+        String formattedPrice = String.format("%.2f", totalPrice);
+        
+        total.setText("Amount Due: $" + formattedPrice);
+        
+        
+        
         
     }    
     

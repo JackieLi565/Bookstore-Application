@@ -56,10 +56,14 @@ public class CustomerShoppingScreenController implements Initializable {
     
     private void buyBooks() {
         System.out.println("Buy Books");
+        
+        
     }
     
     private void redeemWithPoints() {
         System.out.println("Buy Books");
+        
+        
     }
     
     private void Search() {
