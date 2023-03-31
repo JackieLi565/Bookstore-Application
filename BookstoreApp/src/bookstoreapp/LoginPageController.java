@@ -43,6 +43,8 @@ public class LoginPageController implements Initializable {
                 scene = new Scene(root);
                 System.out.println("Directing to Customer Start Screen");
             } else {
+                root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+                scene = new Scene(root);
                 System.out.println("Could not find user in the database");
             }
         }catch(Exception e) {
