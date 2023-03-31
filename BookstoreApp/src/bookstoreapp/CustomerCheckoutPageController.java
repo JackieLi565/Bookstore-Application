@@ -37,6 +37,7 @@ public class CustomerCheckoutPageController implements Initializable {
     @FXML
     public void onOwnerCustomerLogout(javafx.event.ActionEvent event) {
         try {
+            bookstore.logout();
             Parent root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -56,6 +57,7 @@ public class CustomerCheckoutPageController implements Initializable {
         bookPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
         bookList.addAll(bookstore.loadSelectedBooks());
         bookTable.setItems(bookList);
+        
     }    
     
 }

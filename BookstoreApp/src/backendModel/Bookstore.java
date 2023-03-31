@@ -56,6 +56,11 @@ public class Bookstore {
     public void logout() {
         updateDatabase();
         this.currentUser = null;
+        loadSelectedBooks().clear();
+
+       selectedBooks.forEach((b) -> {
+           b.setIsChecked(false);
+        });
     }
     
     public Account searchCustomer(Customer customer) {
