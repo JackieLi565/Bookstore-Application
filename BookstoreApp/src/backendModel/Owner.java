@@ -55,6 +55,16 @@ public class Owner extends Account{
     public void setPoints(int p) {
         System.err.println("No points handled");
     }
+
+    @Override
+    public void setIsChecked(boolean isChecked) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public boolean getIsChecked() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
     
 }

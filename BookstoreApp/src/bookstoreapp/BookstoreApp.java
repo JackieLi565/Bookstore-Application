@@ -11,22 +11,25 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-
+import backendModel.Bookstore;
 /**
  *
  * @author lijac
  */
 public class BookstoreApp extends Application {
-    
+    Bookstore bookstore = new Bookstore();
     @Override
     public void start(Stage stage) throws Exception {
 
         Parent root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
         Scene scene = new Scene(root);
         stage.setScene(scene);
-        stage.show();
         stage.setTitle("Book Store");
         //replace the img with a book ^0^
+        stage.setOnCloseRequest(event -> {
+            bookstore.logout();
+        });
+        stage.show();
     }
 
     /**

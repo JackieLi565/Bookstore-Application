@@ -93,33 +93,33 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
             </Button>
-            <Text layoutX="47.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Points: ">
+            <Text fill="WHITE" layoutX="47.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Current Points: ">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text layoutX="47.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Status: ">
+            <Text fill="WHITE" layoutX="47.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Status: ">
                <font>
                   <Font size="15.0" />
                </font>
             </Text>
-            <Text layoutX="163.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10205">
+            <Text fill="WHITE" layoutX="163.0" layoutY="51.0" strokeType="OUTSIDE" strokeWidth="0.0" text="10205">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Text>
-            <Text layoutX="163.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gold">
+            <Text fill="WHITE" layoutX="163.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Gold">
                <font>
-                  <Font size="15.0" />
+                  <Font name="System Bold" size="15.0" />
                </font>
             </Text>
          </children>
       </AnchorPane>
-      <TableView layoutX="383.0" layoutY="156.0" prefHeight="406.0" prefWidth="598.0">
+      <TableView fx:id="bookTable" layoutX="383.0" layoutY="156.0" prefHeight="406.0" prefWidth="598.0">
          <columns>
-            <TableColumn prefWidth="310.0" text="Book Name" />
-            <TableColumn minWidth="0.0" prefWidth="134.0" text="Book Price" />
-            <TableColumn minWidth="0.0" prefWidth="153.0" text="Selection" />
+            <TableColumn fx:id="bookNameCol" prefWidth="310.0" text="Book Name" />
+            <TableColumn fx:id="bookPriceCol" minWidth="0.0" prefWidth="134.0" text="Book Price" />
+            <TableColumn fx:id="check" minWidth="0.0" prefWidth="153.0" text="Selection" />
          </columns>
       </TableView>
    </children>

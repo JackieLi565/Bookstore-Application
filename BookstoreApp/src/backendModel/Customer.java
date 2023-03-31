@@ -9,13 +9,13 @@ import javafx.scene.control.CheckBox;
 public class Customer extends Account {
     private int points;
     private State memberType;
-    private CheckBox isChecked;
+    private boolean isChecked;
     
     public Customer(String user, String pass, int points)
     {
         super(user, pass);
         this.points = points;
-        this.isChecked = new CheckBox();
+        this.isChecked = false;
         changeState();
     }
     
@@ -36,10 +36,10 @@ public class Customer extends Account {
         return this.memberType;
     }
     
-    public void setCheck(CheckBox check){
-        this.isChecked = check;
+     public void setIsChecked(boolean isChecked){
+        this.isChecked = isChecked;
     }
-    public CheckBox getCheck(){
+    public boolean getIsChecked(){
         return this.isChecked;
     }
     

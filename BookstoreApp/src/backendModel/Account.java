@@ -20,6 +20,9 @@ public abstract class Account {
     public abstract String getUserName();
     public abstract void setUserName(String u);
     
+    public abstract void setIsChecked(boolean isChecked);
+    public abstract boolean getIsChecked();
+    
     public abstract String getPassword();
     public abstract void setPassword(String p);
     

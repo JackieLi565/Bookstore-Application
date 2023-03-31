@@ -5,6 +5,8 @@
  */
 package bookstoreapp;
 
+import backendModel.Book;
+import backendModel.Bookstore;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -14,6 +16,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 
@@ -22,9 +27,20 @@ import javafx.stage.Stage;
  *
  * @author lijac
  */
-public class CustomerCheckoutPageController implements Initializable {
+public class CustomerCheckoutPageController extends ShoppingUtils implements Initializable {
     protected Stage stage;
     protected Scene scene;
+
+    //table
+    @FXML
+    private javafx.scene.control.TableView<Book> bookTable;
+    
+    //columns
+    @FXML
+    private javafx.scene.control.TableColumn<Book, String> bookNameCol;
+    
+    @FXML
+    private javafx.scene.control.TableColumn<Book, Double> bookPriceCol;
     
     @FXML
     public void onOwnerCustomerLogout(javafx.event.ActionEvent event) {
@@ -44,7 +60,13 @@ public class CustomerCheckoutPageController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+        bookNameCol.setCellValueFactory(new PropertyValueFactory<>("name"));
+        bookPriceCol.setCellValueFactory(new PropertyValueFactory<>("price"));
+        for(Book book: selectedList) {
+            System.out.println(book.getName());
+        }
+        bookList.addAll(selectedList);
+        bookTable.setItems(bookList);
     }    
     
 }

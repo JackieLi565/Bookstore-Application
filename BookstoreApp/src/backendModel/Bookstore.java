@@ -12,8 +12,11 @@ public class Bookstore {
     private static final String CF = "Customers.txt";
     private static final String BF = "Books.txt";
     private Account currentUser;
+    private ArrayList<Book> selectedBooks;
+    
     public Bookstore() {
         database = Query.getInstance(CF, BF);
+        selectedBooks = new ArrayList<>();
         this.currentUser = null;
     }
     
@@ -64,9 +67,12 @@ public class Bookstore {
         return null;
     }
     
-    public Book searchCustomer(Book book) {
-        // add search later
-        return null;
+    public void addSelectedBook(Book book) {
+        this.selectedBooks.add(book);
+    }
+    
+    public ArrayList<Book> loadSelectedBooks() {
+        return this.selectedBooks;
     }
     
     public boolean login(String username, String password) {

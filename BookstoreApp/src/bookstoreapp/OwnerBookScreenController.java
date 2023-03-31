@@ -116,6 +116,7 @@ public class OwnerBookScreenController implements Initializable {
         
         }
     }
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
@@ -146,6 +147,7 @@ public class OwnerBookScreenController implements Initializable {
                 }
             }
         });
+        
         bookList.addAll(bookstore.loadBookData());
         bookTable.setItems(bookList);
     }    
