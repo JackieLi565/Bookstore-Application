@@ -20,16 +20,16 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-/**
- * FXML Controller class
- *
- * @author lijac
- */
+
 public class CustomerShoppingScreenController extends ShoppingUtils implements Initializable {
     private Stage stage;
     private Scene scene;
+    
+    @FXML private Text points;
+    @FXML private Text member;
     
 
     //table
@@ -155,10 +155,12 @@ public class CustomerShoppingScreenController extends ShoppingUtils implements I
                 }
             }
         });
-        //bookList.addAll(bookstore.loadBookData());
-        //bookTable.setItems(bookList);
-        //System.out.println(bookstore.getUser().toString());
-        System.out.println(bookstore.getUser().getState());
+        bookList.addAll(bookstore.loadBookData());
+        bookTable.setItems(bookList);
+        points.setText(Integer.toString(bookstore.getUser().getPoints()));
+       // System.out.println(bookstore.getUser().getState().toString());
+        member.setText(bookstore.getUser().getState().toString());
+       
     }    
     
 }
