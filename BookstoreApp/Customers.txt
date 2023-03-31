@@ -3,7 +3,8 @@ Jimmy1, 1, 1
 Jimmy2, 2, 2
 Jimmy3, 3, 3
 Jimmy4, 4, 4
-Jimmy5, 5, 5
+Jimmy5, 5, 0
+Jimmy6, 6, 0
+Jimmy7, 7, 0
+Jimmy8, 8, 0
 Jimmy9, 9, 9000
-bob1, 123, 0
-dsada, 231, 0

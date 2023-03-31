@@ -54,7 +54,7 @@ public class CustomerCheckoutPageController extends ShoppingUtils implements Ini
         for(Book book: selectedList) {
             System.out.println(book.getName());
         }
-        bookList.addAll(selectedList);
+        bookTable.getItems().addAll(selectedList);
         bookTable.setItems(bookList);
     }    
     

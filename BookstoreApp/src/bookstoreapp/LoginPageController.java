@@ -1,6 +1,5 @@
 package bookstoreapp;
 
- 
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -18,6 +17,7 @@ import backendModel.Bookstore;
 import backendModel.Owner;
 
 public class LoginPageController implements Initializable {
+
     Bookstore bookstore;
     Owner owner;
     private Stage stage;
@@ -43,24 +43,25 @@ public class LoginPageController implements Initializable {
                 scene = new Scene(root);
                 System.out.println("Directing to Customer Start Screen");
             } else {
+                 root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
+                scene = new Scene(root);
                 System.out.println("Could not find user in the database");
+             //    username.setText(" "); // clear username input
+              //   password.setText(" "); // clear password input
             }
-        }catch(Exception e) {
-        
+        } catch (Exception e) {
+
         }
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(scene);
         stage.show();
     }
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //TODO: inst owner instance
         bookstore = Bookstore.getInstance();
         owner = new Owner(); //owner.getInstance();
-    }    
+    }
 
-
-
-    
 }

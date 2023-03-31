@@ -1,7 +1,8 @@
-Book5, 5.0
-Book6, 6.0
-Book7, 7.0
-Book8, 8.0
 Book9, 9.0
-coolBook, 123.0
-notCoolBooki, 2431.0
+Man, 12.0
+amn, 213.0
+book1, 1.0
+book2, 2.0
+book3, 3.0
+book4, 4.0
+book5, 5.0
