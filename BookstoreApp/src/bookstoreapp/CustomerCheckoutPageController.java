@@ -23,8 +23,6 @@ public class CustomerCheckoutPageController implements Initializable {
     protected Stage stage;
     protected Scene scene;
     
-    protected double discount;
-    protected int pointsAccumulated;
     protected ObservableList<Book> bookList = FXCollections.observableArrayList();
     Bookstore bookstore = Bookstore.getInstance();
     //table
@@ -42,6 +40,40 @@ public class CustomerCheckoutPageController implements Initializable {
     private Text total;
     
     @FXML
+    private Text discount;
+    
+    @FXML 
+    private Text amountDue;
+    
+    @FXML
+    private Text accumlatedPoints;
+    
+    @FXML 
+    private Text memberType;
+    
+    //
+    @FXML
+    public void displayTotal(double totalAmount, double discountAmount)
+    {
+        total.setText("Total Price: $" + String.format("%.2f", totalAmount));
+        discount.setText("Discount: $" + String.format("%.2f", discountAmount));
+        amountDue.setText("Amount Due: $" + String.format("%.2f", totalAmount-discountAmount));
+        
+    }
+    
+    @FXML
+    public void displayMemberInformation(double totalAmount, double discountAmount)
+    {
+        int points = (int)(totalAmount-discountAmount)*10;
+        accumlatedPoints.setText("Accumlated Points: " + Integer.toString(points));
+        
+        bookstore.getUser().setPoints(bookstore.getUser().getPoints() + points);
+        memberType.setText("Member Status: " + bookstore.getUser().getState());
+    }
+    
+    
+    
+    @FXML
     public void onOwnerCustomerLogout(javafx.event.ActionEvent event) {
         try {
             bookstore.logout();
@@ -55,6 +87,7 @@ public class CustomerCheckoutPageController implements Initializable {
         
         }
     }
+    
     /**
      * Initializes the controller class.
      */
@@ -65,6 +98,7 @@ public class CustomerCheckoutPageController implements Initializable {
         bookList.addAll(bookstore.loadSelectedBooks());
         bookTable.setItems(bookList);
         
+        // Loops get the total price of the checked books
         double totalPrice = 0.0;
         for (Book book : bookList) {
             if (book.getIsChecked()) {
@@ -74,11 +108,7 @@ public class CustomerCheckoutPageController implements Initializable {
         
         String formattedPrice = String.format("%.2f", totalPrice);
         
-        total.setText("Amount Due: $" + formattedPrice);
-        
-        
-        
-        
+        //total.setText("Total Price: $" + formattedPrice);
     }    
     
 }

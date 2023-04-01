@@ -42,12 +42,12 @@
             <Font name="System Bold" size="25.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="559.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Points Accumlated: 800" wrappingWidth="343.0">
+      <Text fx:id = "accumlatedPoints" fill="WHITE" layoutX="559.0" layoutY="478.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Points Accumlated: 800" wrappingWidth="343.0">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>
       </Text>
-      <Text fill="WHITE" layoutX="559.0" layoutY="508.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Status: Silver" wrappingWidth="343.0">
+      <Text fx:id = "memberType" fill="WHITE" layoutX="559.0" layoutY="508.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Member Status: Silver" wrappingWidth="343.0">
          <font>
             <Font name="System Bold" size="20.0" />
          </font>

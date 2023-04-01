@@ -34,6 +34,10 @@ public class CustomerShoppingScreenController implements Initializable {
     protected ObservableList<Book> bookList = FXCollections.observableArrayList();
     Bookstore bookstore = Bookstore.getInstance();
 
+    private double discount = 0;
+    protected int pointsAccumulated;
+    private double total;
+    
     @FXML private Text points;
     @FXML private Text status;
     //table
@@ -56,14 +60,11 @@ public class CustomerShoppingScreenController implements Initializable {
     
     private void buyBooks() {
         System.out.println("Buy Books");
-        
-        
     }
     
     private void redeemWithPoints() {
         System.out.println("Buy Books");
-        
-        
+         
     }
     
     private void Search() {
@@ -87,7 +88,23 @@ public class CustomerShoppingScreenController implements Initializable {
             }
         }
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("CustomerCheckoutPage.fxml"));
+            //
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerCheckoutPage.fxml"));
+            Parent root = loader.load();
+            CustomerCheckoutPageController checkoutController = loader.getController();
+            for (Book book : bookList) {
+            if (book.getIsChecked()) {
+                total += book.getPrice();
+                }
+            }
+            discount = 0.00;
+            
+            checkoutController.displayTotal(total, discount);
+            
+            checkoutController.displayMemberInformation(total, discount);
+            
+            
+            //Parent root = FXMLLoader.load(getClass().getResource("CustomerCheckoutPage.fxml"));
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
@@ -107,7 +124,37 @@ public class CustomerShoppingScreenController implements Initializable {
             }
         }
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("CustomerCheckoutPage.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerCheckoutPage.fxml"));
+            Parent root = loader.load();
+            CustomerCheckoutPageController checkoutController = loader.getController();
+            
+            for (Book book : bookList) {
+            if (book.getIsChecked()) {
+                total += book.getPrice();
+                }
+            }
+            
+            if(bookstore.getUser().getPoints() >= 100)
+            {
+                discount = Math.floor(bookstore.getUser().getPoints() / 100);
+                
+                if(discount > total)
+                {
+                    discount = total;
+                }
+            }
+            
+            else
+            {
+                discount = 0;
+            }
+            
+            bookstore.getUser().setPoints(bookstore.getUser().getPoints() - (int)discount * 100);
+            
+            checkoutController.displayTotal(total, discount);
+            
+            checkoutController.displayMemberInformation(total, discount);
+            
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
