@@ -4,7 +4,6 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -52,21 +51,16 @@
       <AnchorPane layoutX="71.0" layoutY="169.0" prefHeight="164.0" prefWidth="276.0">
          <children>
             <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#62b6cb" height="168.0" layoutY="-2.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="276.0" />
-            <TextField layoutX="103.0" layoutY="55.0" prefHeight="25.0" prefWidth="133.0" promptText="title" />
-            <Text fill="WHITE" layoutX="82.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Search Book" textAlignment="CENTER">
+            <Text fill="WHITE" layoutX="61.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Owner Message" textAlignment="CENTER" wrappingWidth="154.1298828125">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Text>
-            <Button fx:id="search" layoutX="79.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleSearchBooks" prefHeight="33.0" prefWidth="111.0" style="-fx-background-color: white;" text="Search" textAlignment="CENTER" textFill="#62b6cb">
+            <Text fx:id="ownerMsg" fill="WHITE" layoutX="61.0" layoutY="90.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Welcome to my book store!" textAlignment="CENTER" wrappingWidth="154.1298828125">
                <font>
-                  <Font name="System Bold" size="16.0" />
+                  <Font size="18.0" />
                </font>
-               <cursor>
-                  <Cursor fx:constant="HAND" />
-               </cursor>
-            </Button>
-            <Text fill="WHITE" layoutX="24.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Title:" wrappingWidth="71.0" />
+            </Text>
          </children>
       </AnchorPane>
       <AnchorPane layoutX="71.0" layoutY="354.0" prefHeight="203.0" prefWidth="276.0">

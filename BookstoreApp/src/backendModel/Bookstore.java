@@ -54,11 +54,13 @@ public class Bookstore {
     }
     
     public void logout() {
+        //clears the checked books
+        for(Book book: selectedBooks) {
+            book.setIsChecked(false);
+        }
         updateDatabase();
         this.currentUser = null;
-        selectedBooks.forEach((b) -> {
-           b.setIsChecked(false);
-        });
+        //clears the selected books
         loadSelectedBooks().clear();
     }
 

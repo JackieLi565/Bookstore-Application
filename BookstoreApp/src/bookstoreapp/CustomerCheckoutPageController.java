@@ -13,8 +13,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -25,6 +23,9 @@ public class CustomerCheckoutPageController implements Initializable {
     
     protected ObservableList<Book> bookList = FXCollections.observableArrayList();
     Bookstore bookstore = Bookstore.getInstance();
+    
+    @FXML 
+    private Text name;
     //table
     @FXML
     private javafx.scene.control.TableView<Book> bookTable;
@@ -98,6 +99,7 @@ public class CustomerCheckoutPageController implements Initializable {
         bookList.addAll(bookstore.loadSelectedBooks());
         bookTable.setItems(bookList);
         
+        name.setText(bookstore.getUser().getUserName());
         // Loops get the total price of the checked books
         double totalPrice = 0.0;
         for (Book book : bookList) {

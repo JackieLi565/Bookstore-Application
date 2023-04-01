@@ -4,11 +4,11 @@ public class Owner extends Account{
     
     private static Owner instance;
     
-    public Owner() {
+    private Owner() {
         super("admin", "admin");     
     }
     
-    public Owner getInstance()
+    public static Owner getInstance()
     {
         if(instance == null)
         {
@@ -32,39 +32,38 @@ public class Owner extends Account{
     @Override
     public void setUserName(String u)
     {
-        System.err.println("Error, no access");
+        throw new UnsupportedOperationException("Unsupported Feature In V1.01."); 
     }
     
     @Override
     public void setPassword(String p)
     {
-       System.err.println("Error, no access");
+      throw new UnsupportedOperationException("Unsupported Feature In V1.01."); 
     }
 
     @Override
     public int getPoints() {
-        System.err.println("No points handled");
-        return -1;
+        throw new UnsupportedOperationException("Unsupported Feature In V1.01."); 
     }
 
     @Override
     public void setPoints(int p) {
-        System.err.println("No points handled");
+        throw new UnsupportedOperationException("Unsupported Feature In V1.01."); 
     }
 
     @Override
     public void setIsChecked(boolean isChecked) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Unsupported Feature In V1.01."); 
     }
 
     @Override
     public boolean getIsChecked() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Unsupported Feature In V1.01."); 
     }
 
     @Override
     public State getState() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Unsupported Feature In V1.01."); 
     }
     
     
