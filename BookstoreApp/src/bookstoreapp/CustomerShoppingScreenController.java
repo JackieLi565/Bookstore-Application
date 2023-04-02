@@ -38,8 +38,12 @@ public class CustomerShoppingScreenController implements Initializable {
     protected int pointsAccumulated;
     private double total;
     
-    @FXML private Text points;
-    @FXML private Text status;
+    @FXML
+    private Text ownerMsg;
+    @FXML 
+    private Text points;
+    @FXML 
+    private Text status;
     //table
     @FXML
     private javafx.scene.control.TableView<Book> bookTable;
@@ -58,35 +62,17 @@ public class CustomerShoppingScreenController implements Initializable {
     * Really janky routing system for the Navbar, I didn't want to create smaller controller files
     */
     
-    private void buyBooks() {
-        System.out.println("Buy Books");
-    }
-    
-    private void redeemWithPoints() {
-        System.out.println("Buy Books");
-         
-    }
-    
-    private void Search() {
-        System.out.println("Search");
-    }
-    
-    @FXML
-    public void handleSearchBooks(javafx.event.ActionEvent event) {
-        try {
-            Search();
-        } catch (Exception e) {
-        
-        }
-    }
-    
-    @FXML
-    public void handleCustomerShoppingtoCheckoutBUY(javafx.event.ActionEvent event) {
+    private void SaveSelectedBooks() {
         for(Book book: bookstore.loadBookData()) {
             if(book.getIsChecked()) {
                 bookstore.addSelectedBook(book);
             }
         }
+    }
+
+    @FXML
+    public void handleCustomerShoppingtoCheckoutBUY(javafx.event.ActionEvent event) {
+        SaveSelectedBooks();
         try {
             //
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerCheckoutPage.fxml"));
@@ -110,7 +96,6 @@ public class CustomerShoppingScreenController implements Initializable {
             stage.setScene(scene);
             stage.show();
             System.out.println("Customer Shopping Screen to Checkout");
-            buyBooks();
         } catch (Exception e) {
         
         }
@@ -118,11 +103,10 @@ public class CustomerShoppingScreenController implements Initializable {
     
     @FXML
     public void handleCustomerShoppingtoCheckoutREDEEM(javafx.event.ActionEvent event) {
-        for(Book book: bookList) {
-            if(book.getIsChecked()) {
-                bookstore.addSelectedBook(book);
-            }
-        }
+        // add conditional statement here when the user does not have enough poinnts and sets the ownerMsg text to
+        //you do not have enough points
+        // make a if statement that wraps around the try block or take out the logic
+        SaveSelectedBooks();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerCheckoutPage.fxml"));
             Parent root = loader.load();
@@ -160,7 +144,6 @@ public class CustomerShoppingScreenController implements Initializable {
             stage.setScene(scene);
             stage.show();
             System.out.println("Customer Shopping Screen to Checkout");
-            redeemWithPoints();
         } catch (Exception e) {
         
         }
@@ -168,12 +151,14 @@ public class CustomerShoppingScreenController implements Initializable {
     
     @FXML
     public void onCustomerShoppingLogout(javafx.event.ActionEvent event) {
+        SaveSelectedBooks();
         try {
             Parent root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
             scene = new Scene(root);
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             stage.setScene(scene);
             stage.show();
+            bookstore.logout();
             System.out.println("Customer Shopping Screen logout");
         } catch (Exception e) {
         
@@ -194,7 +179,7 @@ public class CustomerShoppingScreenController implements Initializable {
                 checkBox.setOnAction(event -> {
                     Book book = getTableView().getItems().get(getIndex());
                     book.setIsChecked(checkBox.isSelected());
-                    System.out.println(book.getIsChecked() + ", " + book.getName());
+                    ownerMsg.setText(book.getName() + " Good Choice!");
                 });
             }
             @Override

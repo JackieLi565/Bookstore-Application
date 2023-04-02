@@ -22,7 +22,9 @@ public class LoginPageController implements Initializable {
     Owner owner;
     private Stage stage;
     private Scene scene;
-
+    
+    @FXML
+    private javafx.scene.text.Text error;
     @FXML
     private javafx.scene.control.TextField username;
     @FXML
@@ -37,29 +39,32 @@ public class LoginPageController implements Initializable {
             if (name.equals(owner.getUserName()) && pass.equals(owner.getPassword())) {
                 root = FXMLLoader.load(getClass().getResource("OwnerStartScreen.fxml"));
                 scene = new Scene(root);
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
                 System.out.println("Directing to Owner Start Screen");
             } else if (bookstore.login(name, pass)) {
                 root = FXMLLoader.load(getClass().getResource("CustomerStartScreen.fxml"));
                 scene = new Scene(root);
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
                 System.out.println("Directing to Customer Start Screen");
             } else {
-                root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
-                scene = new Scene(root);
+                error.setText("username or password incorrect");
                 System.out.println("Could not find user in the database");
             }
         }catch(Exception e) {
         
         }
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
     }
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         //TODO: inst owner instance
         bookstore = Bookstore.getInstance();
-        owner = new Owner(); //owner.getInstance();
+        owner = Owner.getInstance();
+       
     }    
 
 

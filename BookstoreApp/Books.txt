@@ -5,3 +5,4 @@ Book8, 8.0
 Book9, 9.0
 coolBook, 123.0
 notCoolBooki, 2431.0
+aot, 19.99
