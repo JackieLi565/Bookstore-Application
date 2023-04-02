@@ -103,9 +103,6 @@ public class CustomerShoppingScreenController implements Initializable {
     
     @FXML
     public void handleCustomerShoppingtoCheckoutREDEEM(javafx.event.ActionEvent event) {
-        // add conditional statement here when the user does not have enough poinnts and sets the ownerMsg text to
-        //you do not have enough points
-        // make a if statement that wraps around the try block or take out the logic
         SaveSelectedBooks();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerCheckoutPage.fxml"));

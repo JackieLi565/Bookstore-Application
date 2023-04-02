@@ -58,8 +58,7 @@ public class CustomerCheckoutPageController implements Initializable {
     {
         total.setText("Total Price: $" + String.format("%.2f", totalAmount));
         discount.setText("Discount: $" + String.format("%.2f", discountAmount));
-        amountDue.setText("Amount Due: $" + String.format("%.2f", totalAmount-discountAmount));
-        
+        amountDue.setText("Amount Due: $" + String.format("%.2f", totalAmount-discountAmount));  
     }
     
     @FXML
@@ -71,8 +70,6 @@ public class CustomerCheckoutPageController implements Initializable {
         bookstore.getUser().setPoints(bookstore.getUser().getPoints() + points);
         memberType.setText("Member Status: " + bookstore.getUser().getState());
     }
-    
-    
     
     @FXML
     public void onOwnerCustomerLogout(javafx.event.ActionEvent event) {

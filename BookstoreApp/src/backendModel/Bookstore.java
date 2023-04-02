@@ -16,7 +16,6 @@ public class Bookstore {
         this.currentUser = null;
     }
     
-    
     public static Bookstore getInstance() {
         if(instance == null) {
             instance = new Bookstore();
@@ -24,6 +23,9 @@ public class Bookstore {
         return instance;
     }
     
+    private void updateDatabase() {
+        database.saveToDataBase();
+    }
     
     private void setUser(Account user) {
         this.currentUser = user;
@@ -41,10 +43,6 @@ public class Bookstore {
         return database.getBooks();
     }
     
-    private void updateDatabase() {
-        database.saveToDataBase();
-    }
-    
     public void addBook(Book book) {
         database.addBook(book);
     }
@@ -52,24 +50,7 @@ public class Bookstore {
     public void addCustomer(Customer customer) {
         database.addCustomer(customer);
     }
-    
-    public void logout() {
-        //clears the checked books
-        for(Book book: selectedBooks) {
-            book.setIsChecked(false);
-        }
-        updateDatabase();
-        this.currentUser = null;
-        //clears the selected books
-        loadSelectedBooks().clear();
-    }
-
-    
-    public Account searchCustomer(Customer customer) {
-        // add search later
-        return null;
-    }
-    
+ 
     public void addSelectedBook(Book book) {
         this.selectedBooks.add(book);
     }
@@ -87,5 +68,16 @@ public class Bookstore {
             }
         }
         return false;
+    }
+    
+    public void logout() {
+        //clears the checked books
+        for(Book book: selectedBooks) {
+            book.setIsChecked(false);
+        }
+        updateDatabase();
+        this.currentUser = null;
+        //clears the selected books
+        loadSelectedBooks().clear();
     }
 }
