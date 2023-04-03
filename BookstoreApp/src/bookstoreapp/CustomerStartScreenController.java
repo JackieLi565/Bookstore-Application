@@ -14,9 +14,6 @@ public class CustomerStartScreenController implements Initializable {
     private Stage stage;
     private Scene scene;
     
-    /*
-    * Really janky routing system for the Navbar, I didn't want to create smaller controller files
-    */
     @FXML
     public void handleCustomerStarttoShopping(javafx.event.ActionEvent event) {
         try {

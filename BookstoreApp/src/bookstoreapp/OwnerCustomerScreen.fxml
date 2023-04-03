@@ -78,10 +78,14 @@
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Text fill="WHITE" layoutX="24.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username:" wrappingWidth="71.0" />
             <TextField fx:id="customerPrice" layoutX="103.0" layoutY="94.0" prefHeight="25.0" prefWidth="133.0" promptText="password" />
             <Text fill="WHITE" layoutX="24.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="71.0" />
+            <Text fx:id="error" fill="#f50000c4" layoutX="54.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="158.841796875" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="61.0" layoutY="381.0" prefHeight="160.0" prefWidth="276.0">
@@ -91,6 +95,9 @@
                <font>
                   <Font name="System Bold" size="16.0" />
                </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
             </Button>
             <Text fill="WHITE" layoutX="77.0" layoutY="21.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Remove User" textAlignment="CENTER">
                <font>

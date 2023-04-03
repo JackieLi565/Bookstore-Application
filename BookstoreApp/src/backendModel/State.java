@@ -6,5 +6,5 @@
 package backendModel;
 
 public interface State {
-    double calculateDiscount(double bookPrice, int currentPoints);
+    double calculateDiscount(double bookPrice, Bookstore bookstore);
 }

@@ -17,6 +17,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 public class OwnerCustomerScreenController implements Initializable {
@@ -25,7 +26,8 @@ public class OwnerCustomerScreenController implements Initializable {
     
     private Stage stage;
     private Scene scene;
-    
+    @FXML
+    private Text error;
     //table
     @FXML
     private javafx.scene.control.TableView<Account> customerTable;
@@ -48,16 +50,30 @@ public class OwnerCustomerScreenController implements Initializable {
     
     @FXML
     public void addCustomer(javafx.event.ActionEvent event) {
-        //creates the new book
+        boolean state = true;
+        error.setText("");
         Account customer = new Customer(customerName.getText(), customerPrice.getText(), 0);
-        bookstore.loadUserData().add(customer); //adds the customer to the book store database
-        customerList.clear(); //clears the current list of books inside the table
-        customerList.addAll(bookstore.loadUserData()); //readds all the book data from the book store databse (incliding the new book) and adds it to the Observ list
-
-        customerName.clear(); //clear input box
-        customerPrice.clear(); //clear input box
+        if(customerName.getText().equals("") || customerPrice.getText().equals("")) {
+            state = false;
+            error.setText("Invalid User Input");
+        }
+        for(Account sameUser: customerList) {
+            if(sameUser.getUserName().equals(customerName.getText())) {
+                state = false;
+                error.setText("User is already in DB");
+            }
+        }
         
-        customerTable.setItems(customerList); // add the observ list to the table view
+        if(state) {
+            bookstore.loadUserData().add(customer); //adds the customer to the book store database
+            customerList.clear(); //clears the current list of books inside the table
+            customerList.addAll(bookstore.loadUserData()); //readds all the book data from the book store databse (incliding the new book) and adds it to the Observ list
+
+            customerName.clear(); //clear input box
+            customerPrice.clear(); //clear input box
+
+            customerTable.setItems(customerList); // add the observ list to the table view
+        }
     }
     
     @FXML
@@ -79,9 +95,6 @@ public class OwnerCustomerScreenController implements Initializable {
     }
     
     
-    /*
-    * Really janky routing system for the Navbar, I didn't want to create smaller controller files
-    */
     @FXML
     public void onOwnerCustomerLogout(javafx.event.ActionEvent event) {
         try {

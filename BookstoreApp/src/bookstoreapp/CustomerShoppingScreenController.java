@@ -68,10 +68,8 @@ public class CustomerShoppingScreenController implements Initializable {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerCheckoutPage.fxml"));
             Parent root = loader.load();
             CustomerCheckoutPageController checkoutController = loader.getController();
-            for (Book book : bookList) {
-            if (book.getIsChecked()) {
+            for (Book book : bookstore.loadSelectedBooks()) {    
                 total += book.getPrice();
-                }
             }
             discount = 0.00;
             
@@ -93,46 +91,38 @@ public class CustomerShoppingScreenController implements Initializable {
     
     @FXML
     public void handleCustomerShoppingtoCheckoutREDEEM(javafx.event.ActionEvent event) {
+        boolean state = true;
         SaveSelectedBooks();
-        try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerCheckoutPage.fxml"));
-            Parent root = loader.load();
-            CustomerCheckoutPageController checkoutController = loader.getController();
-            
-            for (Book book : bookList) {
-            if (book.getIsChecked()) {
+        if (bookstore.getUser().getPoints() < 100) {
+            bookstore.loadSelectedBooks().clear();
+            ownerMsg.setText("You do not have enough points");
+            state = false;
+        }
+       
+        for (Book book : bookstore.loadSelectedBooks()) {    
                 total += book.getPrice();
-                }
-            }
-            
-            if(bookstore.getUser().getPoints() >= 100)
-            {
-                discount = Math.floor(bookstore.getUser().getPoints() / 100);
-                
-                if(discount > total)
-                {
-                    discount = total;
-                }
-            }
-            
-            else
-            {
-                discount = 0;
-            }
-            
-            bookstore.getUser().setPoints(bookstore.getUser().getPoints() - (int)discount * 100);
-            
-            checkoutController.displayTotal(total, discount);
-            
-            checkoutController.displayMemberInformation(total, discount);
-            
-            scene = new Scene(root);
-            stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-            stage.setScene(scene);
-            stage.show();
-            System.out.println("Customer Shopping Screen to Checkout");
-        } catch (Exception e) {
+        }
+        discount = bookstore.getUser().getState().calculateDiscount(total, bookstore);
+        bookstore.getUser().setPoints(bookstore.getUser().getPoints() - (int)discount * 100);
         
+        if (state) {
+            try {
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("CustomerCheckoutPage.fxml"));
+                Parent root = loader.load();
+                CustomerCheckoutPageController checkoutController = loader.getController();
+
+                checkoutController.displayTotal(total, discount);
+
+                checkoutController.displayMemberInformation(total, discount);
+
+                scene = new Scene(root);
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
+                System.out.println("Customer Shopping Screen to Checkout");
+            } catch (Exception e) {
+
+            }
         }
     }
     

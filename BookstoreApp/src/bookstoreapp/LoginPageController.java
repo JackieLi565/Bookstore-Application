@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 //Model imports
 import backendModel.Bookstore;
 import backendModel.Owner;
+import javafx.scene.text.Text;
 
 public class LoginPageController implements Initializable {
     Bookstore bookstore;
@@ -23,6 +24,8 @@ public class LoginPageController implements Initializable {
     private Stage stage;
     private Scene scene;
 
+    @FXML
+    private Text error;
     @FXML
     private javafx.scene.control.TextField username;
     @FXML
@@ -38,21 +41,26 @@ public class LoginPageController implements Initializable {
                 root = FXMLLoader.load(getClass().getResource("OwnerStartScreen.fxml"));
                 scene = new Scene(root);
                 System.out.println("Directing to Owner Start Screen");
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
             } else if (bookstore.login(name, pass)) {
                 root = FXMLLoader.load(getClass().getResource("CustomerStartScreen.fxml"));
                 scene = new Scene(root);
                 System.out.println("Directing to Customer Start Screen");
+                stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                stage.setScene(scene);
+                stage.show();
             } else {
                 root = FXMLLoader.load(getClass().getResource("LoginPage.fxml"));
                 scene = new Scene(root);
+                error.setText("invalid login credentials");
                 System.out.println("Could not find user in the database");
             }
         }catch(Exception e) {
         
         }
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        stage.setScene(scene);
-        stage.show();
+        
     }
     
     @Override

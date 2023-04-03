@@ -1,7 +1,7 @@
-Book5, 5.0
-Book6, 6.0
-Book7, 7.0
-Book8, 8.0
-Book9, 9.0
-coolBook, 123.0
-TestBook, 3213.0
+Chain Saw Man, 5.0
+Attack on Titles, 25.0
+Cat In The Hat, 50.0
+Genshin Manga, 100.0
+Harry Potter, 200.0
+DSA, 1000.0
+Nahida Story Quest, 500.0

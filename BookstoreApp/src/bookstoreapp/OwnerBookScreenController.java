@@ -51,17 +51,24 @@ public class OwnerBookScreenController implements Initializable {
     
     @FXML
     public void addBook(javafx.event.ActionEvent event) {
+        boolean state = true;
         //creates the new book
         try {
             Book book = new Book(bookTitle.getText(), Double.parseDouble(bookPrice.getText()));
-            bookstore.loadBookData().add(book); //adds the book to the book store database
-            bookList.clear(); //clears the current list of books inside the table
-            bookList.addAll(bookstore.loadBookData()); //readds all the book data from the book store databse (incliding the new book) and adds it to the Observ list
+            if(bookTitle.getText().equals("") || bookPrice.getText().equals("")) {
+                state = false;
+                error.setText("Invalid Book Input");
+            }
+            if(state) {
+                bookstore.loadBookData().add(book); //adds the book to the book store database
+                bookList.clear(); //clears the current list of books inside the table
+                bookList.addAll(bookstore.loadBookData()); //readds all the book data from the book store databse (incliding the new book) and adds it to the Observ list
 
-            bookTitle.clear(); //clear input box
-            bookPrice.clear(); //clear input box
-            error.setText("");
-            bookTable.setItems(bookList); // add the observ list to the table view
+                bookTitle.clear(); //clear input box
+                bookPrice.clear(); //clear input box
+                error.setText("");
+                bookTable.setItems(bookList); // add the observ list to the table view
+            }
         } catch (Exception e) {
             error.setText("Not Valid Book Price");
         }
@@ -84,9 +91,6 @@ public class OwnerBookScreenController implements Initializable {
         bookTable.setItems(bookList); //loads it to the table
     }
     
-    /*
-    * Really janky routing system for the Navbar, I didn't want to create smaller controller files
-    */
     @FXML
     public void handleOwnerBooktoCustomer(javafx.event.ActionEvent event) {
         try {
