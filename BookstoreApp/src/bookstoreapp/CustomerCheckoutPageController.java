@@ -13,8 +13,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.TableCell;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -25,6 +23,10 @@ public class CustomerCheckoutPageController implements Initializable {
     
     protected ObservableList<Book> bookList = FXCollections.observableArrayList();
     Bookstore bookstore = Bookstore.getInstance();
+    
+    @FXML
+    private Text name;
+    
     //table
     @FXML
     private javafx.scene.control.TableView<Book> bookTable;
@@ -51,14 +53,12 @@ public class CustomerCheckoutPageController implements Initializable {
     @FXML 
     private Text memberType;
     
-    //
     @FXML
     public void displayTotal(double totalAmount, double discountAmount)
     {
         total.setText("Total Price: $" + String.format("%.2f", totalAmount));
         discount.setText("Discount: $" + String.format("%.2f", discountAmount));
         amountDue.setText("Amount Due: $" + String.format("%.2f", totalAmount-discountAmount));
-        
     }
     
     @FXML
@@ -70,9 +70,7 @@ public class CustomerCheckoutPageController implements Initializable {
         bookstore.getUser().setPoints(bookstore.getUser().getPoints() + points);
         memberType.setText("Member Status: " + bookstore.getUser().getState());
     }
-    
-    
-    
+
     @FXML
     public void onOwnerCustomerLogout(javafx.event.ActionEvent event) {
         try {
@@ -107,7 +105,7 @@ public class CustomerCheckoutPageController implements Initializable {
         }
         
         String formattedPrice = String.format("%.2f", totalPrice);
-        
+        name.setText(bookstore.getUser().getUserName());
         //total.setText("Total Price: $" + formattedPrice);
     }    
     

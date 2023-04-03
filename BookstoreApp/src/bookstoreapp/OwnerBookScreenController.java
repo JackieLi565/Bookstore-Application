@@ -18,6 +18,7 @@ import backendModel.Bookstore;
 import java.util.ArrayList;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.TableCell;
+import javafx.scene.text.Text;
 
 public class OwnerBookScreenController implements Initializable {
     private ObservableList<Book> bookList = FXCollections.observableArrayList();
@@ -25,6 +26,9 @@ public class OwnerBookScreenController implements Initializable {
     
     private Stage stage;
     private Scene scene;
+    
+    @FXML
+    private Text error;
     //table
     @FXML
     private javafx.scene.control.TableView<Book> bookTable;
@@ -48,15 +52,19 @@ public class OwnerBookScreenController implements Initializable {
     @FXML
     public void addBook(javafx.event.ActionEvent event) {
         //creates the new book
-        Book book = new Book(bookTitle.getText(), Double.parseDouble(bookPrice.getText()));
-        bookstore.loadBookData().add(book); //adds the book to the book store database
-        bookList.clear(); //clears the current list of books inside the table
-        bookList.addAll(bookstore.loadBookData()); //readds all the book data from the book store databse (incliding the new book) and adds it to the Observ list
+        try {
+            Book book = new Book(bookTitle.getText(), Double.parseDouble(bookPrice.getText()));
+            bookstore.loadBookData().add(book); //adds the book to the book store database
+            bookList.clear(); //clears the current list of books inside the table
+            bookList.addAll(bookstore.loadBookData()); //readds all the book data from the book store databse (incliding the new book) and adds it to the Observ list
 
-        bookTitle.clear(); //clear input box
-        bookPrice.clear(); //clear input box
-        
-        bookTable.setItems(bookList); // add the observ list to the table view
+            bookTitle.clear(); //clear input box
+            bookPrice.clear(); //clear input box
+            error.setText("");
+            bookTable.setItems(bookList); // add the observ list to the table view
+        } catch (Exception e) {
+            error.setText("Not Valid Book Price");
+        }
     }
     
     @FXML

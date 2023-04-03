@@ -145,25 +145,4 @@ public class Query {
         fw.write("");
         fw.close();
     }
-
-    public static void main(String[] args) {
-        //customer driver
-        /*
-        Query database = getInstance("Customers.txt", "Books.txt");
-    
-        for (int i = 0; i < 10; i++) {
-            database.addCustomer(new Customer("Jimmy" + i, ""+i));
-        }
-
-        System.out.println(database.customers);
-
-        for (int i = 0; i < 10; i++) {
-            database.addBook(new Book("Book" + i, i));
-        }
-
-        System.out.println(database.books);
-
-        database.saveToDataBase();
-        */
-    }
 }

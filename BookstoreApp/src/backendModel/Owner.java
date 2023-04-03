@@ -26,45 +26,42 @@ public class Owner extends Account{
     @Override
     public String getPassword()
     {
-        return password;
+        return this.password;
     }
     
     @Override
-    public void setUserName(String u)
-    {
-        System.err.println("Error, no access");
+    public void setUserName(String u) {
+        throw new UnsupportedOperationException("Not Supported in V0.1.1");
     }
     
     @Override
-    public void setPassword(String p)
-    {
-       System.err.println("Error, no access");
+    public void setPassword(String p) {
+       throw new UnsupportedOperationException("Not Supported in V0.1.1");
     }
 
     @Override
     public int getPoints() {
-        System.err.println("No points handled");
-        return -1;
+        throw new UnsupportedOperationException("Not Supported in V0.1.1");
     }
 
     @Override
     public void setPoints(int p) {
-        System.err.println("No points handled");
+        throw new UnsupportedOperationException("Not Supported in V0.1.1");
     }
 
     @Override
     public void setIsChecked(boolean isChecked) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not Supported in V0.1.1");
     }
 
     @Override
     public boolean getIsChecked() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not Supported in V0.1.1");
     }
 
     @Override
     public State getState() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        throw new UnsupportedOperationException("Not Supported in V0.1.1"); 
     }
     
     

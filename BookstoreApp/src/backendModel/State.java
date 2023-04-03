@@ -5,10 +5,6 @@
  */
 package backendModel;
 
-/**
- *
- * @author mahir
- */
 public interface State {
     double calculateDiscount(double bookPrice, int currentPoints);
 }

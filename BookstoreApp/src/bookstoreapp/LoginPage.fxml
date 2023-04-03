@@ -19,7 +19,7 @@
             <Rectangle arcHeight="5.0" fill="#62b6cb" height="622.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="548.0" />
             <ImageView fitHeight="276.0" fitWidth="301.0" layoutX="136.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../Images/Login.png" />
+                  <Image url="@../Images/Login.png" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="110.0" layoutY="424.0" strokeType="OUTSIDE" strokeWidth="0.0" text="designed to offer an easy and enjoyable experience for book enthusiasts to browse and buy their favorite titles." textAlignment="CENTER" wrappingWidth="327.5">

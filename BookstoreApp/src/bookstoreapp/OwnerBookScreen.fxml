@@ -85,6 +85,7 @@
             <Text fill="WHITE" layoutX="24.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Title:" wrappingWidth="71.0" />
             <TextField fx:id="bookPrice" layoutX="103.0" layoutY="94.0" prefHeight="25.0" prefWidth="133.0" promptText="price" />
             <Text fill="WHITE" layoutX="24.0" layoutY="111.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Book Price:" wrappingWidth="71.0" />
+            <Text fx:id="error" fill="#ff0000c4" layoutX="55.0" layoutY="43.0" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="CENTER" wrappingWidth="158.841796875" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="61.0" layoutY="381.0" prefHeight="160.0" prefWidth="276.0">

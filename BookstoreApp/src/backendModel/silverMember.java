@@ -17,7 +17,6 @@ public class silverMember implements State {
         } else {
             return 0;
         }
-
     }
     
     @Override 
